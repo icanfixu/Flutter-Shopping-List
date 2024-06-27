@@ -48,7 +48,6 @@ class _NewItemState extends State<NewItem> {
       if (!context.mounted) {
         return;
       }
-
       Navigator.of(context).pop(
         GroceryItem(
           id: resData['name'],
@@ -161,7 +160,13 @@ class _NewItemState extends State<NewItem> {
                   ),
                   ElevatedButton(
                     onPressed: _isSending ? null : _saveItem,
-                    child: const Text('Add Item'),
+                    child: _isSending
+                        ? const SizedBox(
+                            height: 16,
+                            width: 16,
+                            child: CircularProgressIndicator(),
+                          )
+                        : const Text('Add Item'),
                   )
                 ],
               ),
