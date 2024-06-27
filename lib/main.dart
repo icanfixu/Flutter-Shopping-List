@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60),
       ),
+      debugShowCheckedModeBanner: false,
       home: const HomePage(),
     );
   }
